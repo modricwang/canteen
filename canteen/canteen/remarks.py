@@ -1,4 +1,4 @@
-from canteen_model.models import remarks,images
+from ..canteen_model.models import remarks,images
 from django.http import HttpResponseBadRequest,HttpResponseForbidden,HttpResponseNotFound,JsonResponse
 from . import Utility
 def remarks_route(request):

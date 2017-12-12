@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from . import testdb,canteens,windows,dishes,remarks
+from . import testdb, canteens, windows, dishes, remarks, users
 
 urlpatterns = [
-    #url(r'^admin/', admin.site.urls),
-    #url(r'^testdb/',testdb.testdb),
-    url(r'^canteens',canteens.canteen_route),
-    url(r'^windows',windows.windows_route),
-    url(r'^dishes',dishes.dishes_route),
-    url(r'^remarks',remarks.remarks_route),
+    # url(r'^admin/', admin.site.urls),
+    # url(r'^testdb/',testdb.testdb),
+    url(r'^canteens', canteens.canteen_route),
+    url(r'^windows', windows.windows_route),
+    url(r'^dishes', dishes.dishes_route),
+    url(r'^remarks', remarks.remarks_route),
+    url(r'^users', users.user_route),
 ]
