@@ -22,3 +22,10 @@ def user_route(request):
         return JsonResponse({"id": str(new_user.id)})
 
 
+def authenticator_route(request):
+    if request.method == 'POST':
+        try:
+            username = request.POST['username']
+            password = request.POST['password']
+        except:
+            return HttpResponseBadRequest('Please check your parameters')
