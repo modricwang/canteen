@@ -243,7 +243,7 @@ I don't know how you want to name it.....we can decide it later.
             “uid”:"110"
         }
 
-## Logout [/authlogout]
+## Logout [/userlogout]
 
 注销
 
