@@ -16,14 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from . import testdb, canteens, windows, dishes, remarks, users
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
-    # url(r'^testdb/',testdb.testdb),
-    url(r'^canteens', canteens.canteen_route),
-    url(r'^windows', windows.windows_route),
-    url(r'^dishes', dishes.dishes_route),
-    url(r'^remarks', remarks.remarks_route),
-    url(r'^users', users.user_route),
-    url(r'^auth', users.authenticator_route),
-]
+                  # url(r'^admin/', admin.site.urls),
+                  # url(r'^testdb/',testdb.testdb),
+                  url(r'^canteens', canteens.canteen_route),
+                  url(r'^windows', windows.windows_route),
+                  url(r'^dishes', dishes.dishes_route),
+                  url(r'^remarks', remarks.remarks_route),
+                  url(r'^users', users.user_route),
+                  url(r'^auth', users.authenticator_route),
+                  url(r'^userlogout', users.user_logout_route),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

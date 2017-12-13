@@ -1,4 +1,4 @@
-from ..canteen_model.models import windows, images
+from canteen_model.models import windows, images
 from django.http import HttpResponseBadRequest, HttpResponseForbidden, HttpResponseNotFound, JsonResponse
 from . import Utility
 

@@ -1,4 +1,4 @@
-from ..canteen_model.models import canteens, windows, dishes, remarks, images, users
+from canteen_model.models import canteens, windows, dishes, remarks, images, users
 
 
 def getImagesUrlByID(imgID):
