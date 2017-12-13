@@ -30,5 +30,12 @@ def authenticator_route(request):
         except:
             return HttpResponseBadRequest('Please check your parameters')
         query = list(users.objects.filter(username=username, password=password))
-        response = {}
+        if (len(query) == 1):
+            response = {}
+            response['uid'] = query[0].id
+            return JsonResponse(response)
+        elif (len(query) > 1):
+            return HttpResponseBadRequest('invalid user!')
+        else:
+            return HttpResponseBadRequest('no such user!')
 
