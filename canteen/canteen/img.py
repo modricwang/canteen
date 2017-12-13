@@ -18,3 +18,8 @@ def image_route(request):
             new_img = images(img=img, name=name, owner=owner)
         except:
             return HttpResponseBadRequest('save failed!')
+        response = {}
+        # TODO 我怎么知道域名是什么
+        response['url'] = name
+        response['owner'] = owner
+        return
