@@ -29,3 +29,6 @@ def authenticator_route(request):
             password = request.POST['password']
         except:
             return HttpResponseBadRequest('Please check your parameters')
+        query = list(users.objects.filter(username=username, password=password))
+        response = {}
+

@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^dishes', dishes.dishes_route),
     url(r'^remarks', remarks.remarks_route),
     url(r'^users', users.user_route),
+    url(r'^users', users.user_route),
 ]
