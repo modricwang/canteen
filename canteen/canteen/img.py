@@ -7,19 +7,28 @@ from . import Utility
 
 
 def image_route(request):
+    try:
+        test_uid = request.session["uid"]
+    except KeyError:
+        return HttpResponseForbidden("You have not logged in!")
     if request.method == 'POST':
         try:
             img = request.FILES.get('img')
             name = request.FILES.get('img').name
-            owner = request.POST['owner']
-        except:
+            if (int(request.POST['owner'])!=test_uid):
+                raise Exception("Who are you?")
+            owner = Utility.getObjectByID("users",request.POST['owner'])
+        except Exception as e:
+            print(e)
             return HttpResponseBadRequest('Please check your parameters')
         try:
             new_img = images(img=img, name=name, owner=owner)
-        except:
+        except Exception as e:
+            print(e)
             return HttpResponseBadRequest('save failed!')
         response = {}
         # TODO 我怎么知道域名是什么
+        # local server, brother!
         response['url'] = name
         response['owner'] = owner
-        return
+        return new_img

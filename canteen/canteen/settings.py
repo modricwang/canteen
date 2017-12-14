@@ -77,7 +77,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'canteen',
         'USER': 'root',
-        'PASSWORD': '19970214',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
 

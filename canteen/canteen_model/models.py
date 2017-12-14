@@ -52,4 +52,5 @@ class remarks(models.Model):
 class images(models.Model):
     img = models.ImageField(upload_to='img')
     url = models.CharField(max_length=NAME_LENGTH, default='NULL')
+    name = models.CharField(max_length=TYPE_LENGTH,default='NULL')
     owner = models.ForeignKey("users", )

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from . import testdb, canteens, windows, dishes, remarks, users
+from . import testdb, canteens, windows, dishes, remarks, users,img
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -29,4 +29,5 @@ urlpatterns = [
                   url(r'^users', users.user_route),
                   url(r'^auth', users.authenticator_route),
                   url(r'^userlogout', users.user_logout_route),
+                  url(r'^img', img.image_route),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

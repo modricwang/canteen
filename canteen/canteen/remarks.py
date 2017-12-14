@@ -2,6 +2,10 @@ from canteen_model.models import remarks,images
 from django.http import HttpResponseBadRequest,HttpResponseForbidden,HttpResponseNotFound,JsonResponse
 from . import Utility
 def remarks_route(request):
+    try:
+        test_uid = request.session["uid"]
+    except KeyError:
+        return HttpResponseForbidden("You have not logged in!")
     if (request.method == "POST"):
         try:
             #imgurl = images.objects.get(id=Utility.getImageIDbyUrl(request.POST['imgurl']))
@@ -33,7 +37,7 @@ def remarks_route(request):
     did = int(request.GET['did'])
     if ('rid' in request.GET):
         rid = int(request.GET['rid'])
-        return GetCanteensByID(rid,cid,wid,did)
+        return GetRemarksByID(rid,cid,wid,did)
     else:
         if ('from' in request.GET and 'to' in request.GET):
             start = int(request.GET['from'])
@@ -62,7 +66,7 @@ def List_all_remarks(start,end,cid,wid,did):
         response['result'].append(enclosure)
     response['result'] = response['result'][start:end+1]
     return JsonResponse(response)
-def GetCanteensByID(rid,cid,wid,did):
+def GetRemarksByID(rid,cid,wid,did):
     item = list(remarks.objects.filter(cid=cid,did=did,wid=wid,id=rid))[0]
     if (item == None):
         return HttpResponseNotFound('Not Found')
@@ -70,6 +74,7 @@ def GetCanteensByID(rid,cid,wid,did):
     enclosure['name'] = item.name
     enclosure['position'] = item.position
     enclosure['imgurl'] = Utility.getImagesUrlByID(item.imgurl)
+    enclosure["content"] = item.content
     enclosure['did'] = did
     enclosure['rid'] = item.id
     enclosure['wid'] = wid
