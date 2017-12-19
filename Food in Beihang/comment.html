@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Deliccio Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/comment.js"></script>
+   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-fileinput/4.3.9/css/fileinput.min.css">
+    <script src="https://cdn.bootcss.com/bootstrap-fileinput/4.3.9/js/fileinput.js"></script>
+<!-- //js -->
+<!-- FlexSlider -->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<script defer src="js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+						$(window).load(function(){
+						  $('.flexslider').flexslider({
+							animation: "slide",
+							start: function(slider){
+							  $('body').removeClass('loading');
+							}
+						  });
+						});
+						
+
+					  </script>
+<!-- //FlexSlider -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+</head>
+	
+<body onLoad="receive_comments()">
+<!-- banner -->
+	<div class="banner1">
+		<div class="container">
+			<div class="header-nav">
+				<nav class="navbar navbar-default">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+						<div class="logo">
+							<a class="navbar-brand" href="index.html">Food in BeiHang<span>A guide for all people who want to enjoy food</span></a>
+						</div>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					 <ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li ><a href="dinninghouse.html">Dinning house</a></li>
+						<li ><a href="recommend.html">Daily recommend</a></li>
+					  </ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+			</div>
+		</div>
+	</div>
+<!-- //banner -->
+<!-- menu -->
+	<div class="menu-page">
+		<div class="container">
+			<div class="menu-title">
+				<h3>Guests' Comments</h3>
+				<div class="line">
+				</div>
+				 
+			</div>
+            <div id="dish_info_outern_div" class="services-overview-grids">
+            	<div class="col-md-12 services-overview-grid">
+						<div class="col-md-12 services-overview-gd">
+                        	<div class=" col-md-2 " >
+                            	<a id = "dish_link" href="images/7.jpg" class="b-link-stripe b-animate-go1   swipebox"  title="">
+								<img  id="dish_img" src="images/7.jpg" alt=" " class="img-responsive " style="width:178px; height:125px" />
+								</a>
+                            </div>
+                        	<div class=" col-md-8 " >
+                            	<h4 id ="dish_name">User 1:</h4>
+								
+                                <p id="dish_price">
+                                	abc
+                                </p>
+                                <p id="dish_score">
+                                	123
+                                </p>
+                                <p id="dish_des">Neque porro quisquam est, qui dolorem ipsum quia dolor 
+									sit amet, consectetur, adipisci velit, sed quia non numquam 
+									eius modi te.
+                                </p>
+                            </div>
+                            <div class=" col-md-2 ">
+                                <div class=" col-md-12 ">
+                                &nbsp;
+                                </div>
+                                <div class=" col-md-12 ">
+                                &nbsp;
+                                </div>
+                                
+                                <div class=" col-md-12 ">
+                                  	<button style="height:50px;display:none" class="btn btn-primary" id="Add" data-toggle="modal" data-target="#newComment" > add comment
+                                    </button>
+									<button style="height:50px" class="btn btn-primary"   id="Login" onclick=Back()> Please Login
+                                    </button>
+                                </div>
+                                <div class=" col-md-12 ">
+                                &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-12 ">
+                        	&nbsp;
+                        </div>
+                 </div>
+            </div>
+            	
+                
+                <div  id="comment_outern_div" class="services-overview-grids">
+                <!--
+					<div class="col-md-12 services-overview-grid">
+						<div class="services-overview-grd">
+							<div class=" col-md-12 services-overview-gd ">
+								<h4>User 1:</h4>
+								<p>Neque porro quisquam est, qui dolorem ipsum quia dolor 
+									sit amet, consectetur, adipisci velit, sed quia non numquam 
+									eius modi tempora incidunt ut labore et dolore magnam aliquam 
+									quaerat voluptatem.</p>
+							</div>
+                            <div class="col-md-12 services-overview-gd">
+                            <a href="images/7.jpg" class="b-link-stripe b-animate-go1   swipebox"  title="">
+								<img src="images/7.jpg" alt=" " class="img-responsive " style="width:200px; height:165px" />
+							</a>
+                            </div>
+						</div>
+					</div>
+                 -->
+				</div>
+                
+                <link rel="stylesheet" href="css/swipebox.css" />
+						<script src="js/jquery.swipebox.min.js"></script> 
+							<script type="text/javascript">
+								jQuery(function($) {
+									$(".swipebox").swipebox();
+								});
+							</script>
+                
+				
+			
+			
+		</div>
+	</div>
+<!-- //comment -->
+<!--footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-row">
+				<div class="col-md-12 footer-grids">
+					<h4><a href="index.html">Food in BeiHang</a></h4>
+					<p><a href="mailto:info@example.com">mail@example.com</a></p>
+					<p>+2 000 222 1111</p>
+				</div>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	</div>
+<!--//footer-->	
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+  <div class="modal fade" id="newComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">评论</h4>
+                </div>
+                <div class="modal-body">
+                   评分：	 
+                         <p class="chrome">
+                          <input type="radio" name="radio" value="0" checked="checked" />
+                          <input type="radio" name="radio" value="1" />
+                          <input type="radio" name="radio" value="2" />
+                          <input type="radio" name="radio" value="3" />
+                          <input type="radio" name="radio" value="4" />
+                          <input type="radio" name="radio" value="5" />
+      				    </p>
+                        
+                        评论内容：
+                        <textarea id="content"  class="form-control" id="content" rows="3"></textarea>
+                    
+                        添加图片：
+                   		<input id="picture" type="file" class="file" data-preview-file-type="text"  id="file" multiple>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="newComment()" data-dismiss="modal">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $("#picture").fileinput({
+
+        allowedFileExtensions : ['jpg','png'],
+        overwriteInitial: false,
+        maxFileSize: 5000,
+        maxFilesNum: 1,
+        showUpload:false,
+		maxFileCount:1
+    });
+	</script>
+</body>
+
+</html>
